@@ -4,10 +4,11 @@ import styled from "styled-components";
 
 import { mixins } from "../../css/mixins"; 
 import theme from "../../theme/starz/theme";
+import { UnstyledButton } from "./ButtonBase";
 
 export type WebTvButtonProps = {
     text?: string;
-    static?: boolean;
+    fixedWidth?: boolean;
     icon?: React.ReactNode;
     disabled?: boolean;
     variant?: "tiny" | "regular" | "static";
@@ -15,7 +16,7 @@ export type WebTvButtonProps = {
     onClick?: MouseEventHandler<HTMLButtonElement>;
 };
 
-const wrapper = styled.div`
+export const wrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,7 +31,7 @@ const contentSpan = styled.span`
 `;
 
 
-const WebtvButtonMedium = styled.button<WebTvButtonProps>`
+const WebtvButtonMedium = styled(UnstyledButton)<WebTvButtonProps>`
     color: ${theme.labelTextColor};
     background: ${theme.buttonBackground}; 
     border: ${theme.buttonBorder}; 
@@ -53,7 +54,7 @@ const WebtvButtonMedium = styled.button<WebTvButtonProps>`
 
 const WebTvButton: React.FC<WebTvButtonProps> = ({
     text,
-    static,
+    fixedWidth,
     icon,
     disabled,
     variant,
