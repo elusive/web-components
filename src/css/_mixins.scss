@@ -1,0 +1,33 @@
+@use "sass:math";
+
+@mixin tv720 {
+    @media only screen and (max-width: 1280px) {
+        @content;
+    }
+}
+
+// Takes a sass map of css properties with only sizes returns them
+// and scaled copy inside a 720 media query
+@mixin size-to-720($prop-map) {
+    @each $prop, $value in $prop-map {
+        #{$prop}: $value;
+    }
+
+    @include tv720 {
+        @each $prop, $value in $prop-map {
+            #{$prop}: math.div($value, 1.5);
+        }
+    }
+}
+
+// if trying to "clamp" text inside an anchor tag(<a>) you can only clamp 1 line, and must also use 'white-space: nowrap', or else you run into issues
+@mixin line-clamp($lineCount: 1) {
+    overflow: hidden;
+    @if $lineCount == 1 {
+        text-overflow: ellipsis;
+    } @else {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: $lineCount;
+    }
+}

@@ -1,0 +1,267 @@
+
+@import '../../css/theme';
+
+$nav-font-size: $nav-font-size;
+$nav-background: $nav-background;
+$nav-back-drop-blur: $back-drop-blur;
+
+app-navigation-menu {
+    font-weight: $button-font-weight;
+    font-family: $secondary-font;
+
+    .profile-avatar {
+        border-color: transparent;
+        &:focus,
+        &:hover {
+            outline: none;
+            border-color: $focus-color;
+            img {
+                box-shadow: none;
+            }
+        }
+    }
+
+    .link {
+        color: $secondary-color;
+
+        [class^='icon-'],
+        [class*=' icon-'] {
+            color: $secondary-color;
+        }
+
+        &:after {
+            background: $accent;
+        }
+
+        &.active:not(button),
+        &:hover:not(button),
+        &:active:not(button) {
+            color: $focused-subtext-color;
+
+            [class^='icon-'],
+            [class*=' icon-'] {
+                color: $focused-subtext-color;
+            }
+        }
+    }
+    nav {
+        &.title-background {
+            &.black-blur {
+                background: $nav-background;
+                backdrop-filter: $nav-back-drop-blur;
+            }
+        }
+        .link {
+            @include size-to-720(
+                (
+                    font-size: $nav-font-size
+                )
+            );
+        }
+    }
+}
+
+host {
+    height: 150px;
+    display: block;
+    width: 100vw;
+    position: relative;
+    z-index: 10;
+    pointer-events: none;
+
+    @media only screen and (max-width: 1280px) {
+        height: math.div(150px, 1.5);
+    }
+
+    nav {
+        @include flex();
+        align-items: center;
+        padding: 0 96px;
+        pointer-events: all;
+
+        @media only screen and (max-width: 1280px) {
+            padding: 0 math.div(96px, 1.5);
+        }
+
+        .hide {
+            transform: translate3d(0, -100%, 0);
+            transition: none;
+        }
+
+        .logo-hide {
+            opacity: 0;
+        }
+
+        .interceptor {
+            position: absolute;
+            pointer-events: none;
+            width: 100%;
+            height: 100%;
+        }
+
+        &.title-background {
+            background-size: cover;
+            background-position: center;
+            transition: background-image 1s;
+        }
+
+        // Ugly hack to get nav menu to update on < 2017 LG TVs
+        .flash-on {
+            background-color: rgba(0, 0, 0, 0.01);
+        }
+
+        .icon-search {
+            @include size-to-720(
+                (
+                    font-size: 24px,
+                    margin-right: 3px,
+                    width: 24px,
+                    height: 24px
+                )
+            );
+        }
+
+        .icon-gear {
+            @include size-to-720(
+                (
+                    font-size: 40px
+                )
+            );
+        }
+
+        .menu {
+            @include flex();
+            width: 100%;
+            height: 100%;
+            align-items: center;
+        }
+
+        .logo {
+            background-position: left;
+            background-repeat: no-repeat;
+
+            @include size-to-720(
+                (
+                    margin-right: 40px
+                )
+            );
+        }
+
+        .shadow {
+            filter: drop-shadow(2px 2px 3px black);
+        }
+
+        .link {
+            margin-right: 40px;
+            position: relative;
+            white-space: nowrap;
+            font-weight: 600;
+            letter-spacing: 1.29px;
+
+            @media only screen and (max-width: 1280px) {
+                margin-right: math.div(40px, 1.5);
+            }
+        }
+
+        .link-underline {
+            &:focus {
+                outline: none;
+
+                &:after {
+                    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.8);
+                    filter: none;
+                    content: '';
+                    width: 50%;
+                    height: 4px;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    margin-left: auto;
+                    margin-right: auto;
+                    border-radius: 5px;
+
+                    @include size-to-720(
+                        (
+                            margin-bottom: -13px
+                        )
+                    );
+                }
+            }
+        }
+
+        .account-container {
+            margin-left: auto;
+            @include flex();
+            align-items: center;
+
+            @include size-to-720(
+                (
+                    height: 60px
+                )
+            );
+
+            img {
+                @include size-to-720(
+                    (
+                        height: 40px
+                    )
+                );
+            }
+
+            .profile-avatar {
+                z-index: 1;
+                display: inline-block;
+                border-radius: 50%;
+                border-style: solid;
+                @include size-to-720(
+                    (
+                        border-width: 4px,
+                        width: 60px,
+                        height: 60px,
+                        margin-right: 35px
+                    )
+                );
+            }
+
+            button[webtv-dynamic-width-tiny-button] {
+                cursor: pointer;
+
+                @include size-to-720(
+                    (
+                        height: 50px,
+                        min-height: 50px,
+                        min-width: 170px,
+                        margin-right: 28px,
+                        letter-spacing: 2px
+                    )
+                );
+
+                &:after {
+                    content: none !important;
+                }
+            }
+        }
+
+        .large-title-color {
+            left: 0;
+            top: 54px;
+            position: absolute;
+            text-align: center;
+            justify-content: center;
+            width: 100%;
+            font-size: 36px;
+            font-weight: 300;
+
+            @media only screen and (max-width: 1280px) {
+                font-size: 28px;
+                top: math.div(54px, 1.5);
+            }
+        }
+
+        .truncate-long-titles {
+            white-space: nowrap;
+            @include line-clamp(1);
+        }
+    }
+}    

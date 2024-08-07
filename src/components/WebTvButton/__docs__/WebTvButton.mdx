@@ -1,0 +1,36 @@
+import { Canvas, Meta } from "@storybook/blocks";
+import Example from "./Example.jsx";
+import * as WebTvButton from "./WebTvButton.stories.tsx";
+
+<Meta of={WebTvButton} title="WebTvButton" />
+
+# WebTvButton
+
+WebTV button component with different sizes.
+
+#### Example
+
+<Canvas of={WebTvButton.Regular} style="background-color:#082125"  />
+
+## Usage
+
+```ts
+import {WebTvButton} from "components";
+
+const Example = ({ size, ...rest }) => {
+    return (
+            <WebTvButton {...rest} onClick={() => console.log("clicked")}>
+                {size}
+            </WebTvButton>
+    );
+};
+
+export default Example;
+```
+
+#### Arguments
+
+All of the attributes are passed through thus allowing use of the component as a normal
+button element. I.e. you can set `onClick` or as you can see the existing
+`button[webtv-button]` attribute selectors for styling are passed through in order to
+support our existing styles.

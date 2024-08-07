@@ -1,0 +1,97 @@
+@use 'sass:math';
+
+@mixin standard_height {
+    height: 169px;
+
+    @media only screen and (max-width: 1280px) {
+        height: math.div(169px, 1.5);
+    }
+}
+
+@mixin standard_width {
+    width: 300px;
+
+    @media only screen and (max-width: 1280px) {
+        width: math.div(300px, 1.5);
+    }
+}
+
+@mixin standard_right_margin {
+    margin-right: 35px;
+
+    @media only screen and (max-width: 1280px) {
+        margin-right: math.div(35px, 1.5);
+    }
+}
+
+@mixin standard_bottom_margin {
+    margin-bottom: 35px;
+
+    @media only screen and (max-width: 1280px) {
+        margin-bottom: math.div(35px, 1.5);
+    }
+}
+
+@mixin category_height {
+    height: 169px;
+
+    @media only screen and (max-width: 1280px) {
+        height: math.div(169px, 1.5);
+    }
+}
+
+@mixin category_width {
+    width: 300px;
+
+    @media only screen and (max-width: 1280px) {
+        width: math.div(300px, 1.5);
+    }
+}
+
+@mixin crew_width {
+    width: 301px;
+
+    @media only screen and (max-width: 1280px) {
+        width: math.div(301px, 1.5);
+    }
+}
+
+@mixin crew_height {
+    height: 87px;
+
+    @media only screen and (max-width: 1280px) {
+        height: math.div(87px, 1.5);
+    }
+}
+
+@mixin crew_lane_height {
+    height: 261px;
+
+    @media only screen and (max-width: 1280px) {
+        height: math.div(261px, 1.5);
+    }
+}
+
+@mixin originals_width {
+    width: 205px;
+
+    @media only screen and (max-width: 1280px) {
+        width: math.div(205px, 1.5);
+    }
+}
+
+@mixin originals_height {
+    height: 361px;
+
+    @media only screen and (max-width: 1280px) {
+        height: math.div(361px, 1.5);
+    }
+}
+
+@mixin slider_height {
+    height: 240px;
+
+    @media only screen and (max-width: 1280px) {
+        height: math.div(240px, 1.5);
+    }
+}

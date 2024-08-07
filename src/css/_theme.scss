@@ -1,0 +1,127 @@
+@import './typography';
+@import './icons';
+
+$white: #ffffff;
+$glint: #d2ff00;
+$refracted-cyan:#1ad1d3;
+$dark-umbra: #082125;
+$rich-black: #021214;
+$medium-grey: #6e6e6e;
+$charcoal-grey: #505151;
+$charcoal-grey-50: rgba(80, 81, 81, 0.5);
+$charcoal-grey-20: rgba(80, 81, 82, 0.2);
+$light-grey: #d1d3d4;
+$light-grey-100: #d1d2d3;
+$black-800: #1b1b1b;
+$accent: $glint;
+$secondary-accent: $refracted-cyan;
+$error-color: #ff3838;
+$focused-text-color: $rich-black;
+$focused-subtext-color: #ffffff;
+$unfocused-text-color: $light-grey-100;
+
+$browse-by-imgs:
+    linear-gradient(to bottom, rgba(213, 243, 30, 0.48) -100%, #f1e5a5, #36d7da);
+$progress-bar-gradient:
+    linear-gradient(to right, $glint, #f8e194 24%, #d6fbf0 60%, $refracted-cyan);
+$nav-background:
+    linear-gradient(to bottom, $dark-umbra, rgba(8, 33, 37, 0.9) 60%, rgba(8, 33, 37, 0));
+$nav-back-drop-blur: blur(0px);
+$badge-gradient:
+    linear-gradient(to bottom, #c8e2b1 0%, $refracted-cyan 60%, #36d7da 100%);
+$screen-saver-gradient:
+    radial-gradient(circle at 87% 37%, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 48%, $dark-umbra 90%);
+$line-height-normal: 1.22;
+$label-text-color: $white;
+$button-background: rgba(0, 0, 0, 0.3);
+$button-border: 1px solid $light-grey;
+$primary-font: "Averta";
+$button-font-weight: 500;
+
+
+// core
+body {
+    line-height: $line-height-normal;
+    margin: 0;
+    color: white;
+    font-size: 24px;
+    background-color: $dark-umbra;
+
+    @media only screen and (max-width: 1280px) {
+        font-size: 16px;
+    }
+}
+
+body,
+button,
+input {
+    font-family: Averta;
+    font-weight: 400;
+}
+
+div {
+    background-repeat: no-repeat;
+}
+
+p {
+    line-height: 1.3;
+}
+
+#body-root {
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+}
+
+*:focus {
+    outline: none;
+}
+
+a,
+a:focus,
+a:visited,
+a:hover,
+a:active {
+    text-decoration: none;
+    cursor: pointer;
+    color: inherit;
+}
+
+.splash {
+    background-size: cover;
+    background-position: center;
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 100; // this is here to support the nav menu, not sure why it's needed
+    pointer-events: none;
+    transition: opacity 1s;
+}
+
+.link {
+    color: white;
+    font-weight: 600;
+}
+
+.app-background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s;
+    z-index: -1;
+}
+
+.menu-large-title {
+    box-sizing: border-box;
+    padding: 0 276px;
+
+    @media only screen and (max-width: 1280px) {
+        padding: 0 math.div(276px, 1.5);
+    }
+}

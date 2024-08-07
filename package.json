@@ -13,7 +13,7 @@
     "build-storybook": "storybook build"
   },
   "type": "module",
-  "main": "dist/index.cjs.js",
+  "main": "dist/index",
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -57,7 +57,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "storybook": "^7.4.1",
-    "styled-components": "^6.0.7",
+    "sass": "1.77.4",
     "typescript": "^5.2.2",
     "vite": "^4.4.9",
     "vite-plugin-dts": "^3.5.3",

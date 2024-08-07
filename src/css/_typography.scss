@@ -1,0 +1,126 @@
+@import './mixins';
+
+@font-face {
+    font-family: MuseoSans;
+    src: url('/src/assets/starz/fonts/MuseoSans_100.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: MuseoSans;
+    src: url('/src/assets/starz/fonts/MuseoSans_300.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: MuseoSans;
+    src: url('/src/assets/starz/fonts/MuseoSans_500.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: MuseoSans;
+    src: url('/src/assets/starz/fonts/MuseoSans_700.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: MuseoSans;
+    src: url('/src/assets/starz/fonts/MuseoSans_900.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Averta;
+    src: url('/src/assets/starz/fonts/Averta-Extrathin.otf') format('opentype');
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: Averta;
+    src: url('/src/assets/starz/fonts/Averta-Thin.otf') format('opentype');
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: Averta;
+    src: url('/src/assets/starz/fonts/Averta-Light.otf') format('opentype');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: Averta;
+    src: url('/src/assets/starz/fonts/Averta-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Averta;
+    src: url('/src/assets/starz/fonts/Averta-Semibold.otf') format('opentype');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: Averta;
+    src: url('/src/assets/starz/fonts/Averta-Bold.otf') format('opentype');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: Averta;
+    src: url('/src/assets/starz/fonts/Averta-Extrabold.otf') format('opentype');
+    font-weight: 900;
+}
+
+.large-title-color {
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-image: linear-gradient(to bottom, #a7a7a7, #808080);
+    font-weight: 500;
+    @include size-to-720(
+        (
+            letter-spacing: 3.8px
+        )
+    );
+}
+
+.h2 {
+    font-weight: 500;
+}
+
+.free-icon {
+    font-family: MuseoSans;
+}
+
+
+/* Focus */
+.profile-focus-border {
+    &:hover,
+    &:focus {
+        .profile-picture {
+            border-color: #d2ff00;
+        }
+    }
+}
+
+.nav-profile-focus-border {
+    &:hover,
+    &:focus {
+        border-color: #d2ff00;
+    }
+}
+
+.round-slider-selector {
+    &:hover,
+    &:focus {
+        img {
+            border-color: #d2ff00;
+        }
+    }
+}
